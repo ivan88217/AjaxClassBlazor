@@ -1,0 +1,18 @@
+﻿@page "/logout"
+
+@using AjaxClassBlazor.Data;
+@inject SessionService sessionService
+
+<h1>You have been logout</h1>
+
+@code{
+    
+
+    protected override void OnInitialized()
+    {
+        sessionService.logData.logHref = "/login";
+        sessionService.logData.logText = "login";
+        sessionService.logData.account = "";
+        sessionService.logData.token = "";
+    }
+}

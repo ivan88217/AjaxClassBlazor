@@ -18,6 +18,8 @@ namespace AjaxClassBlazor
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            string filepath = @"wwwroot/auth/3a360484938e.json";
+            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", filepath);
         }
 
         public IConfiguration Configuration { get; }
@@ -29,6 +31,8 @@ namespace AjaxClassBlazor
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<SessionService>();
+            services.AddSingleton<FirebaseControl>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -14,6 +14,28 @@
     <base href="~/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBeLbgUu7COs4d3teybQBp66yGxjNh8Afw",
+            authDomain: "formal-wonder-238506.firebaseapp.com",
+            databaseURL: "https://formal-wonder-238506.firebaseio.com",
+            projectId: "formal-wonder-238506",
+            storageBucket: "formal-wonder-238506.appspot.com",
+            messagingSenderId: "936857015721",
+            appId: "1:936857015721:web:76dbbf892ecc5dbecd60b8",
+            measurementId: "G-6H7XSWSBF2"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
 </head>
 <body>
     <app>

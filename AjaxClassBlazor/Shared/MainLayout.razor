@@ -1,4 +1,7 @@
 ﻿@inherits LayoutComponentBase
+@using System.Diagnostics;
+@using AjaxClassBlazor.Data;
+@inject SessionService sessionService
 
 <div class="sidebar">
     <NavMenu />
@@ -7,9 +10,26 @@
 <div class="main">
     <div class="top-row px-4">
         <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+        <NavLink class="nav-link" @onmousedown="checkLogin" href="@logHref">@sessionService.logData.logText</NavLink>
     </div>
 
     <div class="content px-4">
         @Body
     </div>
 </div>
+
+@code{
+    private string logHref = "";
+
+    protected override void OnInitialized()
+    {
+        checkLogin();
+    }
+
+
+
+    public void checkLogin()
+    {
+        logHref = sessionService.logData.logHref;
+    }
+}

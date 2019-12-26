@@ -1,0 +1,23 @@
+﻿@page "/login"
+@using AjaxClassBlazor.Data;
+@inject SessionService sessionService
+
+<h1>You have been login</h1>
+
+@code{
+    private dynamic account;
+
+
+    protected override void OnInitialized()
+    {
+        sessionService.logData.logHref = "/logout";
+        sessionService.logData.logText = "logout";
+        sessionService.logData.account = "test";
+        sessionService.logData.token = "test";
+    }
+
+    private void test()
+    {
+        account.Value = "123";
+    }
+}

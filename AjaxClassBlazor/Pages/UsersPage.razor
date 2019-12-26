@@ -1,0 +1,15 @@
+﻿@page "/users"
+@using AjaxClassBlazor.Data;
+@inject FirebaseControl firebase
+
+<h1>User List</h1>
+
+@foreach (Users user in firebase.getUser().Result)
+{
+<div>
+    <p>Name: @user.name</p>
+    <p>Email: @user.email</p>
+    <p>Password: @user.password</p>
+</div>
+<hr />
+}
